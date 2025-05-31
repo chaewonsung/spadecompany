@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "key": "0",
+      "title": "경영 본부",
+      "children": [
+        {
+          "key": "0-0",
+          "title": "기획 팀",
+          "children": [
+            {
+              "key": "0-0-0",
+              "title": "전략 기획 파트",
+              "children": [
+                {
+                  "key": "0-0-0-0",
+                  "title": "신사업 기획 담당",
+                  "path": "/new-business"
+                },
+                {
+                  "key": "0-0-0-1",
+                  "title": "시장 조사 담당",
+                  "path": "/market-research"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "0-1",
+          "title": "개발 팀",
+          "children": [
+            {
+              "key": "0-1-0",
+              "title": "솔루션 개발 파트",
+              "children": [
+                {
+                  "key": "0-1-0-0",
+                  "title": "플랫폼 기획 담당",
+                  "path": "/platform-planning"
+                },
+                {
+                  "key": "0-1-0-1",
+                  "title": "기술 검토 담당",
+                  "path": "/tech-review"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "1",
+      "title": "제품 관리 본부",
+      "children": [
+        {
+          "key": "1-0",
+          "title": "상품 기획 팀",
+          "children": [
+            {
+              "key": "1-0-0",
+              "title": "시장 분석 파트",
+              "children": [
+                {
+                  "key": "1-0-0-0",
+                  "title": "경쟁사 분석 담당",
+                  "path": "/competitor-analysis"
+                },
+                {
+                  "key": "1-0-0-1",
+                  "title": "소비자 조사 담당",
+                  "path": "/consumer-research"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "1-1",
+          "title": "R&D 팀",
+          "children": [
+            {
+              "key": "1-1-0",
+              "title": "제품 개발 파트",
+              "children": [
+                {
+                  "key": "1-1-0-0",
+                  "title": "신제품 기획 담당",
+                  "path": "/product-planning"
+                },
+                {
+                  "key": "1-1-0-1",
+                  "title": "프로토타입 담당",
+                  "path": "/prototype"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2",
+      "title": "영업 팀",
+      "path": "/sales"
+    },
+    {
+      "key": "3",
+      "title": "인사 팀",
+      "path": "/hr"
+    }
+  ]
+}

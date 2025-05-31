@@ -1,0 +1,48 @@
+@import './reset.css';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Pretendard Variable';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --g-padding-top: 50px;
+  --g-max-width: 1400px;
+
+  --blue-01: #e8edec;
+  --blue-02: #c6d2d0;
+  --blue-03: #a4b7b4;
+  --blue-04: #819c98;
+  --blue-05: #637e7a;
+  --blue-06: #485b58;
+  --blue-07: #2d3937;
+  --blue-08: #121716;
+
+  --fz-01: 1.2rem;
+  --fz-02: 1.4rem;
+  --fz-03: 1.6rem;
+  --fz-04: 1.8rem;
+  --fz-05: 2.2rem;
+  --fz-06: 2.8rem;
+}
+
+.fz-heading-1 {
+  font-size: var(--fz-06);
+}

@@ -1,0 +1,44 @@
+{
+  "data": {
+    "new-business": {
+      "title": "신사업 기획 담당",
+      "description": "신규 사업 기회를 발굴하고 기획 전략을 수립하는 부서입니다."
+    },
+    "market-research": {
+      "title": "시장 조사 담당",
+      "description": "시장 동향 및 고객 니즈를 분석하여 기획 방향에 인사이트를 제공하는 역할을 합니다."
+    },
+    "platform-planning": {
+      "title": "플랫폼 기획 담당",
+      "description": "자사 서비스 플랫폼의 구조 및 기능을 기획하고 개선 방향을 설계합니다."
+    },
+    "tech-review": {
+      "title": "기술 검토 담당",
+      "description": "서비스 구현에 필요한 기술을 검토하고 기술적 타당성을 분석합니다."
+    },
+    "competitor-analysis": {
+      "title": "경쟁사 분석 담당",
+      "description": "주요 경쟁사 제품과 전략을 분석하여 대응 전략을 수립합니다."
+    },
+    "consumer-research": {
+      "title": "소비자 조사 담당",
+      "description": "소비자 행동과 피드백을 분석하여 제품 개선에 반영합니다."
+    },
+    "product-planning": {
+      "title": "신제품 기획 담당",
+      "description": "시장과 기술 동향을 고려한 신제품의 콘셉트 및 개발 방향을 기획합니다."
+    },
+    "prototype": {
+      "title": "프로토타입 담당",
+      "description": "제품 초기 모델을 설계하고 제작하여 기능과 디자인을 검토합니다."
+    },
+    "sales": {
+      "title": "영업 팀",
+      "description": "자사 제품 및 서비스를 고객에게 제공하고 판매 실적을 관리합니다."
+    },
+    "hr": {
+      "title": "인사 팀",
+      "description": "인재 채용, 조직 관리, 복지 제도 운영 등 전반적인 인사 관리를 담당합니다."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--blue-01);
+  max-width: var(--g-max-width);
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 36px;
+}
+
+.content-wrapper {
+  padding: var(--g-padding-top) 30px;
+  overflow: hidden;
+  line-height: 1.5;
+}

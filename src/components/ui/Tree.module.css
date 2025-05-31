@@ -1,0 +1,41 @@
+.tree-title {
+  display: block;
+  width: 100%;
+  padding-block: 1em;
+  padding-left: calc(
+    (var(--depth, 0) - 1) * 15px + var(--tree-title-padding-inline, 15px)
+  );
+  padding-right: var(--tree-title-padding-inline, 15px);
+  box-sizing: border-box;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    background-color: var(--blue-01);
+  }
+
+  &:global(.active) {
+    background-color: var(--blue-04);
+    color: white;
+  }
+
+  &:not(a) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.list-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: all 0.2s allow-discrete;
+  > * {
+    overflow: hidden;
+  }
+}
+
+.list-wrapper.expand {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
