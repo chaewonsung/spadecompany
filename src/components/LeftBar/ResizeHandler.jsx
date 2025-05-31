@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useLeftBarStore } from '../../store/useLeftBarStore';
 import { IconResize } from '../ui/Icons';
 import styles from './LeftBar.module';
 
 const ResizeHandler = ({ barRef }) => {
-  const [isResizing, setIsResizing] = useState(false);
   const setWidth = useLeftBarStore((state) => state.setWidth);
+  const isResizingRef = useRef(false);
   const handlerRef = useRef();
   const barLeftRef = useRef();
 
@@ -13,18 +13,18 @@ const ResizeHandler = ({ barRef }) => {
     function handleMouseDown() {
       if (!barRef.current) return;
       barLeftRef.current = barRef.current.getBoundingClientRect().left;
-      setIsResizing(true);
+      isResizingRef.current = true;
     }
 
     function handleMouseMove(e) {
-      if (!isResizing) return;
+      if (!isResizingRef.current) return;
       const newWidth = e.clientX - barLeftRef.current;
       setWidth(newWidth);
     }
 
     function handleMouseUp() {
-      if (!isResizing) return;
-      setIsResizing(false);
+      if (!isResizingRef.current) return;
+      isResizingRef.current = false;
     }
 
     handlerRef.current.addEventListener('mousedown', handleMouseDown);
@@ -36,7 +36,7 @@ const ResizeHandler = ({ barRef }) => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isResizing, barRef]);
+  }, [isResizingRef, barRef]);
 
   return (
     <button ref={handlerRef} className={styles.resizeHandler}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import LeftBar from '../LeftBar/LeftBar';
+import LeftBar from '../../components/LeftBar/LeftBar';
 import { Outlet } from 'react-router-dom';
 import styles from './Layout.module';
 

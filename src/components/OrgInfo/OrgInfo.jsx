@@ -3,7 +3,7 @@ import styles from './OrgInfo.module';
 
 const OrgInfo = ({ content }) => {
   return (
-    <section>
+    <section className={styles.orgInfo}>
       <h1 className={`fz-heading-1 ${styles.title}`}>{content.title}</h1>
       <p className={styles.desc}>
         {content.description} <br />

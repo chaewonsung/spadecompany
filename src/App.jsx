@@ -1,21 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Layout from './components/layouts/Layout';
+import Layout from './pages/layouts/Layout';
 import OrgInfoPage from './pages/OrgInfoPage';
+import IntroPage from './pages/IntroPage';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route element={<Layout />}>
-          <Route
-            path="/"
-            element={
-              <div style={{ fontSize: '5rem' }}>
-                스페이드컴퍼니 과제 - 황채원
-              </div>
-            }
-          />
+          <Route path="/" element={<IntroPage />} />
           <Route path="/:org" element={<OrgInfoPage />} />
         </Route>
       </Routes>
