@@ -22,7 +22,7 @@ const IntroPage = () => {
         <div
           style={{ fontSize: '3rem', marginBottom: '30px', lineHeight: 1.5 }}
         >
-          안녕하세요😀 <br />
+          안녕하세요😀<br />
           퍼블리셔 지원자 황채원입니다
         </div>
         <a

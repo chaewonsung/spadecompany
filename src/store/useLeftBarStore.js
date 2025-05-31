@@ -13,6 +13,9 @@ export const useLeftBarStore = create(
     toggleFloating: () => set((state) => ({ isFloating: !state.isFloating })),
     toggleResizable: () =>
       set((state) => ({ isResizable: !state.isResizable })),
-    setWidth: (newWidth) => set({ width: newWidth }),
+    setWidth: (newWidthOrDelta, relative = false) =>
+      set((state) => ({
+        width: relative ? state.width + newWidthOrDelta : newWidthOrDelta,
+      })),
   }))
 );

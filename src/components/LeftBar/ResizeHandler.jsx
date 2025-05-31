@@ -5,8 +5,8 @@ import styles from './LeftBar.module';
 
 const ResizeHandler = ({ barRef }) => {
   const setWidth = useLeftBarStore((state) => state.setWidth);
-  const isResizingRef = useRef(false);
   const handlerRef = useRef();
+  const isResizingRef = useRef(false);
   const barLeftRef = useRef();
 
   useEffect(() => {
@@ -39,7 +39,11 @@ const ResizeHandler = ({ barRef }) => {
   }, [isResizingRef, barRef]);
 
   return (
-    <button ref={handlerRef} className={styles.resizeHandler}>
+    <button
+      ref={handlerRef}
+      className={styles.resizeHandler}
+      aria-label="사이드바 너비 조절"
+    >
       <IconResize />
     </button>
   );
