@@ -9,7 +9,6 @@
   height: 100vh;
   background-color: white;
   border-right: 2px solid transparent;
-  white-space: nowrap;
 
   &.resize {
     border-right-color: var(--border-color);
@@ -25,7 +24,12 @@
   flex-direction: column;
   gap: 70px;
   padding-top: var(--g-padding-top);
-  overflow: hidden;
+  overflow: auto;
+
+  > * {
+    white-space: nowrap;
+    min-width: max-content;
+  }
 }
 
 .check {
