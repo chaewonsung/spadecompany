@@ -24,13 +24,13 @@ const TreeNode = ({ node, depth = 1, parentExpand = true }) => {
   const nodeProps = {
     role: 'none',
     className: styles.treeNode,
-    ['aria-level']: depth,
   };
 
   const titleProps = {
     role: 'treeitem',
     className: styles.treeTitle,
     style: { '--depth': depth },
+    ['aria-level']: depth,
   };
 
   useEffect(() => {
@@ -38,8 +38,12 @@ const TreeNode = ({ node, depth = 1, parentExpand = true }) => {
   }, [parentExpand, expand]);
 
   return hasChildren ? (
-    <li {...nodeProps} aria-expanded={expand}>
-      <button {...titleProps} onClick={() => setExpand((prev) => !prev)}>
+    <li {...nodeProps}>
+      <button
+        {...titleProps}
+        aria-expanded={expand}
+        onClick={() => setExpand((prev) => !prev)}
+      >
         {node.title}
         <Icon />
       </button>
