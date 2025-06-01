@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Tree.module';
 import { IconMinus, IconPlus } from './Icons';
@@ -20,51 +20,51 @@ const TreeNode = ({ node, depth = 1, parentExpand = true }) => {
   const [expand, setExpand] = useState(false);
   const hasChildren = node.children && node.children.length > 0;
   const Icon = expand ? IconMinus : IconPlus;
-
-  const nodeProps = {
-    role: 'none',
-    className: styles.treeNode,
-  };
-
-  const titleProps = {
-    role: 'treeitem',
-    className: styles.treeTitle,
-    style: { '--depth': depth },
-    ['aria-level']: depth,
-  };
+  const handleToggle = useCallback((e) => {
+    e.stopPropagation();
+    setExpand((prev) => !prev);
+  }, []);
 
   useEffect(() => {
     if (!parentExpand && expand) setExpand(false);
   }, [parentExpand, expand]);
 
-  return hasChildren ? (
-    <li {...nodeProps}>
-      <button
-        {...titleProps}
-        aria-expanded={expand}
-        onClick={() => setExpand((prev) => !prev)}
-      >
-        {node.title}
-        <Icon />
-      </button>
-      <div className={cn('listWrapper', { expand })}>
-        <ul role="group">
-          {node.children.map((child) => (
-            <TreeNode
-              key={child.key}
-              node={child}
-              depth={depth + 1}
-              parentExpand={expand}
-            />
-          ))}
-        </ul>
+  return (
+    <li role="none" className={styles.treeNode}>
+      <div className={styles.treeTitle}>
+        <NavLink
+          role="treeitem"
+          className={styles.link}
+          style={{ '--depth': depth }}
+          aria-level={depth}
+          to={node.path}
+        >
+          {node.title}
+        </NavLink>
+        {hasChildren && (
+          <button
+            className={styles.toggleBtn}
+            aria-expanded={expand}
+            onClick={handleToggle}
+          >
+            <Icon />
+          </button>
+        )}
       </div>
-    </li>
-  ) : (
-    <li {...nodeProps}>
-      <NavLink {...titleProps} to={node.path}>
-        {node.title}
-      </NavLink>
+      {hasChildren && (
+        <div className={cn('listWrapper', { expand })}>
+          <ul role="group">
+            {node.children.map((child) => (
+              <TreeNode
+                key={child.key}
+                node={child}
+                depth={depth + 1}
+                parentExpand={expand}
+              />
+            ))}
+          </ul>
+        </div>
+      )}
     </li>
   );
 };

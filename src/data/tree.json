@@ -3,14 +3,17 @@
     {
       "key": "0",
       "title": "경영 본부",
+      "path": "/management",
       "children": [
         {
           "key": "0-0",
           "title": "기획 팀",
+          "path": "/planning-team",
           "children": [
             {
               "key": "0-0-0",
               "title": "전략 기획 파트",
+              "path": "/strategy",
               "children": [
                 {
                   "key": "0-0-0-0",
@@ -29,10 +32,12 @@
         {
           "key": "0-1",
           "title": "개발 팀",
+          "path": "/development-team",
           "children": [
             {
               "key": "0-1-0",
               "title": "솔루션 개발 파트",
+              "path": "/solution-dev",
               "children": [
                 {
                   "key": "0-1-0-0",
@@ -53,14 +58,17 @@
     {
       "key": "1",
       "title": "제품 관리 본부",
+      "path": "/product",
       "children": [
         {
           "key": "1-0",
           "title": "상품 기획 팀",
+          "path": "/product-planning-team",
           "children": [
             {
               "key": "1-0-0",
               "title": "시장 분석 파트",
+              "path": "/market-analysis",
               "children": [
                 {
                   "key": "1-0-0-0",
@@ -79,10 +87,12 @@
         {
           "key": "1-1",
           "title": "R&D 팀",
+          "path": "/rnd",
           "children": [
             {
               "key": "1-1-0",
               "title": "제품 개발 파트",
+              "path": "/product-dev",
               "children": [
                 {
                   "key": "1-1-0-0",
