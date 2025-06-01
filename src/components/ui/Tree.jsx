@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Tree.module';
 import { IconMinus, IconPlus } from './Icons';
@@ -20,23 +20,25 @@ const TreeNode = ({ node, depth = 1, parentExpand = true }) => {
   const [expand, setExpand] = useState(false);
   const hasChildren = node.children && node.children.length > 0;
   const Icon = expand ? IconMinus : IconPlus;
-  const { current: titleProps } = useRef({
+
+  const nodeProps = {
+    role: 'none',
+    className: styles.treeNode,
+    ['aria - level']: depth,
+  };
+
+  const titleProps = {
     role: 'treeitem',
-    style: { '--depth': depth },
     className: styles.treeTitle,
-  });
+    style: { '--depth': depth },
+  };
 
   useEffect(() => {
     if (!parentExpand && expand) setExpand(false);
   }, [parentExpand, expand]);
 
   return hasChildren ? (
-    <li
-      className={styles.treeNode}
-      role="none"
-      aria-level={depth}
-      aria-expanded={hasChildren ? expand : undefined}
-    >
+    <li {...nodeProps} aria-expanded={expand}>
       <button {...titleProps} onClick={() => setExpand((prev) => !prev)}>
         {node.title}
         <Icon />
@@ -55,7 +57,7 @@ const TreeNode = ({ node, depth = 1, parentExpand = true }) => {
       </div>
     </li>
   ) : (
-    <li className={styles.treeNode}>
+    <li {...nodeProps}>
       <NavLink {...titleProps} to={node.path}>
         {node.title}
       </NavLink>
