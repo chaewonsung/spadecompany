@@ -24,7 +24,7 @@ const TreeNode = ({ node, depth = 1, parentExpand = true }) => {
   const nodeProps = {
     role: 'none',
     className: styles.treeNode,
-    ['aria - level']: depth,
+    ['aria-level']: depth,
   };
 
   const titleProps = {

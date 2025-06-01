@@ -36,7 +36,7 @@ const ResizeHandler = ({ barRef }) => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
     };
-  }, [isResizingRef, barRef]);
+  }, []);
 
   return (
     <button
